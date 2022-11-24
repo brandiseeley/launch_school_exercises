@@ -1,0 +1,3 @@
+My %{adjective} boyfriend %{verb} me all day long.
+He %{adverb} %{verb} my %{noun}, which is really weird.
+If only the %{adjective} %{noun} knew how I felt.
