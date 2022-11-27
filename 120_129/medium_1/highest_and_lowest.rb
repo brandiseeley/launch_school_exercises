@@ -1,20 +1,16 @@
 class Card
   include Enumerable
-  CARDS = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace']
+  VALUES = {'Jack' => 11, 'Queen' => 12, 'King' => 13, 'Ace' => 14}
   attr_reader :rank, :suit, :value
 
   def initialize(rank, suit)
     @rank = rank
     @suit = suit
-    @value = CARDS.index(rank)
-  end
-
-  def each
-    @rank.map{|rank| yield rank}
+    @value = VALUES.fetch(rank, rank)
   end
 
   def <=>(other_card)
-    self.value <=> other_card.value
+    value <=> other_card.value
   end
 
   def to_s
